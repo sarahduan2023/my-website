@@ -139,3 +139,54 @@ p {
   padding: 20px;
   text-align: left;
 }
+/* --- Dark Mode Styles --- */
+
+body.dark-mode {
+  background: #333;
+  color: #fff;
+}
+
+nav.dark-mode {
+  background: #222;
+}
+
+nav.dark-mode ul li a {
+  color: #ccc;
+}
+nav.dark-mode ul li a:hover {
+  color: #007bff;
+}
+
+.project.dark-mode {
+  background: #444;
+  color: #fff;
+}
+
+.blog-preview {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.dark-mode .blog-preview {
+  background: #444;
+  color: #fff;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  z-index: 999;
+}
+
+.dark-mode .theme-toggle {
+  background: #333;
+  color: #fff;
+  border-color: #666;
+}

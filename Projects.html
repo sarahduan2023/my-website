@@ -15,6 +15,7 @@
       <li><a href="about.html">About</a></li>
     </ul>
   </nav>
+  <button class="theme-toggle" onclick="toggleTheme(this)">🌙 Dark Mode</button>
 
   <div class="container">
     <section class="project">
@@ -46,5 +47,33 @@
       </ol>
     </section>
   </div>
+  <script>
+    function toggleTheme(button) {
+      const isDark = document.body.classList.toggle('dark-mode');
+      document.querySelector('nav').classList.toggle('dark-mode');
+  
+      const project = document.querySelector('.project');
+      if (project) {
+        project.classList.toggle('dark-mode');
+      }
+  
+      button.innerText = isDark ? '🌞 Light Mode' : '🌙 Dark Mode';
+    }
+  
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark-mode');
+        document.querySelector('nav').classList.add('dark-mode');
+  
+        const project = document.querySelector('.project');
+        if (project) {
+          project.classList.add('dark-mode');
+        }
+  
+        const button = document.querySelector('.theme-toggle');
+        if (button) button.innerText = '🌞 Light Mode';
+      }
+    });
+  </script>  
 </body>
 </html>
